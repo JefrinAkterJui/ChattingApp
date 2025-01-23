@@ -1,0 +1,167 @@
+
+.mina_all_signUp{
+    @apply bg-[#4CAB72] w-full h-screen flex items-center justify-center
+}
+
+.signup_img_bg{
+    @apply  
+    rounded-[20px] 
+    sm:rounded-[20px] 
+    md:rounded-[40px] 
+    lg:rounded-[70px] 
+    xl:rounded-[70px]
+    /* ----- */
+    w-[200px]
+    sm:w-[]
+    md:w-[]
+    lg:w-[910px]
+    xl:w-[1500px]
+    /* ------ */
+    py-[]
+    px-[]
+    sm:py-[]
+    sm:px-[]
+    md:py-[]
+    md:px-[]
+    lg:py-[66px]
+    lg:px-[62px]
+    xl:py-[30px]
+    xl:px-[62px]
+    xl:h-[750px]
+    relative
+    overflow-hidden
+}
+.pata{
+    @apply absolute right-[120px] top-[170px] rotate-[16deg] z-[120]
+}
+.mina_form{
+    @apply bg-[#ffffff2e] border-[2px] border-white backdrop-blur-[4px]
+    rounded-[20px] 
+    sm:rounded-[20px] 
+    md:rounded-[40px] 
+    lg:rounded-[30px] 
+    xl:rounded-[50px]
+    /* ---------- */
+    w-[60px]
+    sm:w-[]
+    md:w-[]
+    lg:w-[500px]
+    xl:w-[700px]
+    /* ----- */
+    lg:pt-[20px]
+    lg:pb-[144px]
+    /* ------ */
+    xl:pt-[30px]
+    xl:pb-[10px]
+}
+.signUp_head h1 {
+    @apply text-[#fff] lg:leading-[60px] xl:leading-[78px] leading-3 font-bold font-poppins text-center
+    /* ------ */
+    text-[]
+    sm:text-[]
+    md:text-[]
+    lg:text-[35px]
+    xl:text-[52px]
+    w-full
+}
+.signUp_head h2 {
+    @apply text-[#fff] lg:leading-[24px] xl:leading-[24px] leading-3 font-medium font-poppins  mt-[2px] text-center
+        text-[]
+        sm:text-[]
+        md:text-[]
+        lg:text-[16px]
+        xl:text-[18px]
+        w-full
+    }
+
+.signUp_head span{
+    @apply text-[#62FFB4]
+}
+.form_info_text{
+    @apply pl-[30px] xl:pl-[50px]
+    mt-[2px]
+    sm:mt-[]
+    md:mt-[]
+    lg:mt-[30px]
+    xl:mt-[50px]
+}
+.form_info_text h3{
+    @apply text-white font-bold leading-[27px]
+    text-[8px]
+    sm:text-[] 
+    md:text-[]
+    lg:text-[18px]
+    xl:text-[20px]
+    lg:mb-[5px]
+}
+.form_info_text .border_b {
+    @apply bg-white
+    w-[60px]
+    sm:w-[]
+    md:w-[]
+    lg:w-[380px]
+    xl:w-[500px]
+    h-[2px]
+    sm:h-[]
+    md:h-[]
+    lg:h-[2px]
+    xl:h-[2px]
+    lg:mb-[30px]
+}
+
+
+
+.Sign_button {
+    @apply flex justify-center items-center
+}
+.Sign_button button{
+    @apply text-[#303030] bg-[#62FFB4]  m-auto
+    lg:mt-[10px] xl:mt-[20px]
+    rounded-[5px] 
+    sm:rounded-[8px] 
+    md:rounded-[8px] 
+    lg:rounded-[8px] 
+    xl:rounded-[10px]
+    py-[]
+    px-[]
+    sm:py-[]
+    sm:px-[]
+    md:py-[]
+    md:px-[]
+    lg:py-[10px]
+    lg:px-[80px]
+    xl:py-[13px]
+    xl:px-[108px]
+    font-poppins font-bold
+}
+.s_input  {
+    @apply bg-transparent font-poppins font-semibold leading-10 border-b-2 border-white text-sky-200
+    w-[60px]
+    sm:w-[]
+    md:w-[]
+    lg:w-[380px]
+    xl:w-[500px]
+    lg:mb-[30px]
+    outline-none
+    text-[8px]
+    sm:text-[] 
+    md:text-[]
+    lg:text-[18px]
+    xl:text-[20px]
+}
+.or_part{
+    @apply flex  items-center gap-[7px] pl-[50px] mt-[30px]
+}
+.or_part .line1{
+    @apply w-[229px] h-[1px] bg-[#fff] 
+}
+.or_part .line2{
+    @apply w-[138px] h-[1px] bg-[#fff] 
+}
+.or_part p{
+    @apply font-poppins font-medium text-[16px] text-[#fff]
+}
+/* -----------------icone------------ */
+.Sine_icon{
+    @apply flex w-[117px] pl-[50px] ml-[228px] mt-[10px]
+}
