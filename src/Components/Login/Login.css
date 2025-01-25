@@ -1,3 +1,6 @@
 .hum{
     @apply pb-[83px]
 }
+.forgot{
+    @apply font-poppins font-semibold text-[16px] text-green-400 
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './SignUp.css'
 import formbg from '../../assets/Images/frombg.png'
 import { Link, useNavigate } from 'react-router-dom'
-import { getAuth, createUserWithEmailAndPassword ,sendEmailVerification ,updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword ,sendEmailVerification ,updateProfile ,GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { Bounce, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import google from '../../assets/Images/google.png'
@@ -16,7 +16,8 @@ const SignUp = () => {
   const auth = getAuth();
   // -----------nevigate------------------------------
   const nevigate =useNavigate()
-
+  // -----------google variable-----------------------
+  const provider = new GoogleAuthProvider();
 
 
   const hendelButton=(e)=>{
@@ -39,7 +40,7 @@ const SignUp = () => {
           console.log(user)
           // ----------update user profile---------
           updateProfile(auth.currentUser, {
-            displayName: fromData.Username, photoURL: "https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png"
+            displayName: fromData.Username, photoURL: "https://play-lh.googleusercontent.com/V7hHj36C6ugHdnqQhp4oCPKPZKhImAnm80a6yOGZl6LVw3PlNY9cM4qkKPT5ZSHQhg"
           }).then(() => {
             // ---------send email verification-------
             sendEmailVerification(auth.currentUser)
@@ -95,7 +96,22 @@ const SignUp = () => {
       });
     }
   }
+  // --------------google sin in ------------------
+  const GoogleSineIn =()=>{
+    signInWithPopup(auth, provider)
+    .then((result) => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      const user = result.user;
+      nevigate('/Login')
+    }).catch((error) => {
+      const errorCode = error.code;
+      const email = error.customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      console.log(errorCode)
+    });
 
+  }
 
   return (
     <>
@@ -129,7 +145,7 @@ const SignUp = () => {
                   <div className="line2"></div>
                 </div>
                 <div className="Sine_icon">
-                  <img src={google} alt="google" />
+                  <img onClick={GoogleSineIn} src={google} alt="google"  />
                   <img src={apple} alt="apple" />
                 </div>
               </div>

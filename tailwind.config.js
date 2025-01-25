@@ -8,9 +8,16 @@ export default {
 
     fontFamily:{
 
-      'poppins':[ "Poppins", "serif"]
+      'poppins':[ "Poppins", "serif"],
+      'bannerfont':[  "Great Vibes", "serif"]
     },
     extend: {},
+    container:{
+      center:true
+    },
+    backgroundImage:{
+      'userbg':"url('/src/assets/Images/userBanner.png')"
+    }
   },
   plugins: [],
 }

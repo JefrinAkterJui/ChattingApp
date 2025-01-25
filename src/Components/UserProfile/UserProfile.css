@@ -1,0 +1,18 @@
+.User_profile{
+    @apply flex justify-center items-center 
+}
+.main_user_profile{
+    @apply w-full h-[256px] bg-userbg  relative rounded-[5px] 
+}
+.main_user_profile h3{
+    @apply absolute top-[100px] right-[180px] font-bannerfont font-bold text-[50px] text-[#413030]
+}
+.profile{
+    @apply flex  mt-[230px] ml-[100px]
+}
+.profilephoto{
+    @apply  w-[100px] h-[100px] rounded-full 
+}
+.profileName{
+    @apply font-poppins font-bold text-[30px] text-[#fff] mt-[30px] ml-[10px]
+}

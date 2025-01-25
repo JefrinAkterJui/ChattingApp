@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import './Login.css'
 import formbg from '../../assets/Images/frombg.png'
 import pata from '../../assets/Images/leaf.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Bounce, toast } from 'react-toastify'
+import { useDispatch } from 'react-redux'
+import { UserData } from '../../Slice/userSlice'
+import { getDatabase, ref, set } from "firebase/database";
 
 
 const Login = () => {
@@ -12,6 +15,12 @@ const Login = () => {
       const [Inputerror , setInputerror] =useState({ UserEmailerror:'', UserPassError:''})
     //   --------------firebase variable-------------
     const auth = getAuth();
+    // ----------------navigate-----------
+    const Navigate =useNavigate()
+    // ------------redux variable--------
+    const dispatch =useDispatch()
+    // ----------red data----------------
+    const db = getDatabase();
 
 
     const hendelButton=(e)=>{
@@ -27,7 +36,42 @@ const Login = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 if(user.emailVerified== true){
-                    console.log('login hoise')
+                    // --------------navigate to home page------------
+                    Navigate('/')
+                    // -------------success tost-----------------
+                    toast.success('Login success', {
+                        position: "top-right",
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        transition: Bounce,
+                    });
+                    // --------------store the user data--------
+                    dispatch(UserData(user))
+                    // ---------------set the user data to locatstore--------
+                    localStorage.setItem("currentUser" , JSON.stringify(user))
+                    // ---------------set data to the realtime data base--------
+                    set(ref(db, 'AllUsers/'), {
+                        userPhoto: user.photoURL,
+                        userName: user.displayName
+                    });
+                }
+                else{
+                    toast.error('Email is not verified', {
+                        position: "top-right",
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        transition: Bounce,
+                    });
                 }
             })
             .catch((error) => {
@@ -69,6 +113,7 @@ const Login = () => {
                                 <h3>Password</h3>
                                 <p className='text-red-600 font-Bebas text-[14px] '>{Inputerror.UserPassError}</p>
                                 <input onChange={(e)=>{setfromData((prev)=>({...prev , Password:e.target.value})) , setInputerror((prev)=>({...prev , UserPassError:''}))}} className='s_input' type="password" />
+                                <h2 className='forgot'><Link to={'/ForgotPass'}>Forgot password?</Link></h2>
                             </div>
                             <div className="Sign_button">
                                 <button  onClick={hendelButton}>Login</button>

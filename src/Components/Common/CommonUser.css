@@ -1,0 +1,9 @@
+.user{
+    @apply flex items-center gap-[15px] mt-[40px]
+}
+.User_profilepicture{
+    @apply w-[70px] h-[70px] rounded-full overflow-hidden bg-gray-50
+}
+.userName{
+    @apply font-poppins font-semibold text-[20px] text-[#fff]
+}

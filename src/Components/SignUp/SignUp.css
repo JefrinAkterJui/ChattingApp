@@ -163,5 +163,5 @@
 }
 /* -----------------icone------------ */
 .Sine_icon{
-    @apply flex w-[117px] pl-[50px] ml-[228px] mt-[10px]
+    @apply flex w-[117px] pl-[50px] ml-[228px] mt-[10px] cursor-pointer
 }
