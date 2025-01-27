@@ -32,7 +32,7 @@
     overflow-hidden
 }
 .pata{
-    @apply absolute right-[120px] top-[170px] rotate-[16deg] z-[120]
+    @apply absolute right-[-34px] top-[170px] rotate-[16deg] z-[120]
 }
 .mina_form{
     @apply bg-[#ffffff2e] border-[2px] border-white backdrop-blur-[4px]

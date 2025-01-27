@@ -38,7 +38,7 @@ const Navbar = () => {
             </div>
             <div className={`icons icon2 ${showIcon? 'showIcons' : 'closeIcons'}`}>
                 <ul>
-                    <li><Link><FiUserPlus /></Link><p>Request</p></li>
+                    <li><Link to={'/FrndRequest'}><FiUserPlus /></Link><p>Request</p></li>
                     <li><Link><TbUserCheck /></Link><p>Friends</p></li>
                     <li><Link><LuUserMinus /></Link><p>Block</p></li>
                 </ul>
@@ -46,7 +46,7 @@ const Navbar = () => {
         </div>
         <div className="container relative">
             <div className="logoutbutton flex absolute  mt-[60px] ">
-                <SlLogout onClick={hendelLogout} className='text-[25px] text-[#fff]  cursor-pointer' />
+                <SlLogout onClick={hendelLogout} className='text-[25px] text-[#423a3a]  cursor-pointer' />
             </div>
 
         </div>

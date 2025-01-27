@@ -7,7 +7,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Bounce, toast } from 'react-toastify'
 import { useDispatch } from 'react-redux'
 import { UserData } from '../../Slice/userSlice'
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, push, ref, set } from "firebase/database";
 
 
 const Login = () => {
@@ -55,7 +55,7 @@ const Login = () => {
                     // ---------------set the user data to locatstore--------
                     localStorage.setItem("currentUser" , JSON.stringify(user))
                     // ---------------set data to the realtime data base--------
-                    set(ref(db, 'AllUsers/'), {
+                    set(ref(db, 'AllUsers/' + user.uid), {
                         userPhoto: user.photoURL,
                         userName: user.displayName
                     });

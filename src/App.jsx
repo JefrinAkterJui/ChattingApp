@@ -9,6 +9,7 @@ import Login from './Components/Login/Login'
 import Home from './Components/Pages/Home'
 import ForgotPass from './Components/ForgotPass/ForgotPass'
 import Alluser from './Components/Pages/Alluser'
+import FrndRequest from './Components/Pages/FrndRequest'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/' element={<LayoutOne/>}>
           <Route index element={<Home/>}/>
           <Route path='/Alluser' element={<Alluser/>}/>
+          <Route path='/FrndRequest' element={<FrndRequest/>}/>
         </Route>
       </Route>
     )

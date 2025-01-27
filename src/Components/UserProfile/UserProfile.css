@@ -8,11 +8,11 @@
     @apply absolute top-[100px] right-[180px] font-bannerfont font-bold text-[50px] text-[#413030]
 }
 .profile{
-    @apply flex  mt-[230px] ml-[100px]
+    @apply flex  mt-[230px] ml-[100px] items-center
 }
 .profilephoto{
     @apply  w-[100px] h-[100px] rounded-full 
 }
 .profileName{
-    @apply font-poppins font-bold text-[30px] text-[#fff] mt-[30px] ml-[10px]
+    @apply font-poppins font-bold text-[30px] text-[#413030] mt-[30px] ml-[10px]
 }
