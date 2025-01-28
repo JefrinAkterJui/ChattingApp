@@ -41,7 +41,8 @@ const SignUp = () => {
           // ----------update user profile---------
           updateProfile(auth.currentUser, {
             displayName: fromData.Username, photoURL: "https://play-lh.googleusercontent.com/V7hHj36C6ugHdnqQhp4oCPKPZKhImAnm80a6yOGZl6LVw3PlNY9cM4qkKPT5ZSHQhg"
-          }).then(() => {
+          })
+          .then(() => {
             // ---------send email verification-------
             sendEmailVerification(auth.currentUser)
             .then(() => {

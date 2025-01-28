@@ -14,9 +14,7 @@ const Alluser = () => {
   // -----------custom variables----------
   const [allUsers , setAllusers]=useState([])
 
-
-
-  // ---------function---------------
+  // --------- Request function---------------
   const HendelRequest =(UserData)=>{
     set(push(ref(db, 'Allrequest/')), {
         SenderID: currentUser.uid,
@@ -25,8 +23,6 @@ const Alluser = () => {
         ReceverID: UserData.key    
     });
   }
-
-
 
   // -----------realtime database----------
   useEffect(()=>{
@@ -50,7 +46,7 @@ const Alluser = () => {
                   allUsers.map((item , i)=>(
                   <div key={i} className="flex items-center justify-between">
                       <CommonUser CommonUserName={item.userName} CommonUserPicture={item.userPhoto}/>
-                      <ButtonV1 ButtonV1Clock={()=>HendelRequest(item)} ButonV1bg={'bg-red-500'} ButonV1Text={'Add'}/>
+                      <ButtonV1 ButtonV1Clock={()=>HendelRequest(item)} ButonV1bg={'bg-red-500 hover:bg-red-700 duration-500'} ButonV1Text={'Add'}/>
                   </div>
 
                   ))
