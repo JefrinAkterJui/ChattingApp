@@ -39,7 +39,7 @@ const Navbar = () => {
             <div className={`icons icon2 ${showIcon? 'showIcons' : 'closeIcons'}`}>
                 <ul>
                     <li><Link to={'/FrndRequest'}><FiUserPlus /></Link><p>Request</p></li>
-                    <li><Link><TbUserCheck /></Link><p>Friends</p></li>
+                    <li><Link to={'/Friends'}><TbUserCheck /></Link><p>Friends</p></li>
                     <li><Link><LuUserMinus /></Link><p>Block</p></li>
                 </ul>
             </div>

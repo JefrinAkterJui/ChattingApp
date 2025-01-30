@@ -10,6 +10,7 @@ import Home from './Components/Pages/Home'
 import ForgotPass from './Components/ForgotPass/ForgotPass'
 import Alluser from './Components/Pages/Alluser'
 import FrndRequest from './Components/Pages/FrndRequest'
+import Friends from './Components/Pages/Friends'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route index element={<Home/>}/>
           <Route path='/Alluser' element={<Alluser/>}/>
           <Route path='/FrndRequest' element={<FrndRequest/>}/>
+          <Route path='/Friends' element={<Friends/>}/>
         </Route>
       </Route>
     )

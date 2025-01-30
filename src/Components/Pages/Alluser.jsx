@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CommonUser from '../Common/CommonUser'
 import ButtonV1 from '../Common/ButtonV1'
-import { getDatabase, ref, onValue, set, push } from "firebase/database";
+import { getDatabase, ref, onValue, set, push, remove } from "firebase/database";
 import { useSelector } from 'react-redux';
 
 
@@ -13,18 +13,10 @@ const Alluser = () => {
 
   // -----------custom variables----------
   const [allUsers , setAllusers]=useState([])
+  const [sentRequest , setSentRequest]=useState([])
+  // const [RequestSent , SetRequestSent]=useState(false)
 
-  // --------- Request function---------------
-  const HendelRequest =(UserData)=>{
-    set(push(ref(db, 'Allrequest/')), {
-        SenderID: currentUser.uid,
-        SenderName: currentUser.displayName,
-        SenderPhoto: currentUser.photoURL,
-        ReceverID: UserData.key    
-    });
-  }
-
-  // -----------realtime database----------
+  // -----------fetch all users data from realtime database ----------
   useEffect(()=>{
     onValue(ref(db , 'AllUsers/'), (snapshot) => {
       let arr =[]
@@ -36,6 +28,31 @@ const Alluser = () => {
       setAllusers(arr)
     });
   } ,[])
+  // --------------realtime database useing to build cancel function---------
+  useEffect(()=>{
+    onValue(ref(db , 'AllUsers/') , (snapshot)=>{
+      let arr =[]
+      snapshot.forEach((item)=>{
+        if(item.val().SenderID==currentUser.uid && item.val().RequestStatus=='pending'){
+          arr[item.val().ReceverID]=item.key
+        }
+      })
+      setSentRequest(arr)
+    })
+  },[])
+  // --------- send Request  function---------------
+  const HendelRequest =(UserData)=>{
+    set(push(ref(db, 'Allrequest/')), {
+        SenderID: currentUser.uid,
+        SenderName: currentUser.displayName,
+        SenderPhoto: currentUser.photoURL,
+        ReceverID: UserData.key ,
+        RequestStatus: 'pending'   
+    });
+  }
+  // -------Cencel request function----------------
+  
+
 
   return (
     <>

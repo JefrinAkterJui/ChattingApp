@@ -25,6 +25,10 @@ const FrndRequest = () => {
           setAllRequest(arr)
         });
       } ,[])
+
+      // --------------Confirm button function------------
+      
+
       // --------------Remove button function------------
       const hendelRemove =(DelateData)=>{
         remove(ref(db , 'Allrequest/' + DelateData.key))
@@ -42,7 +46,7 @@ const FrndRequest = () => {
                           <CommonUser CommonUserName={item.SenderName} CommonUserPicture={item.SenderPhoto}/>
                           <div>
                               <ButtonV1 ButonV1Text={'Confirm'} ButonV1bg={'bg-red-500 hover:bg-red-700 duration-500'}/>
-                              <ButtonV1 ButonV1Text={'Remove'} ButonV1bg={'bg-red-500 ml-3 hover:bg-red-700 duration-500'} ButtonV1Clock={()=>hendelRemove(item)}/>
+                              <ButtonV1 ButtonV1Clock={()=>hendelRemove(item)} ButonV1Text={'Remove'} ButonV1bg={'bg-red-500 ml-3 hover:bg-red-700 duration-500'} />
                           </div>
                     </div>
                   ))

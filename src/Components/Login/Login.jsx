@@ -73,6 +73,7 @@ const Login = () => {
                         transition: Bounce,
                     });
                 }
+                
             })
             .catch((error) => {
                 const errorCode = error.code;
