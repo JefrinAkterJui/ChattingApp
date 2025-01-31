@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CommonUser from '../Common/CommonUser'
 import ButtonV1 from '../Common/ButtonV1'
-import { getDatabase, onValue, ref, remove } from 'firebase/database';
+import { getDatabase, onValue, push, ref, remove, set } from 'firebase/database';
 import { useSelector } from 'react-redux';
 
 const FrndRequest = () => {
@@ -12,6 +12,19 @@ const FrndRequest = () => {
 
       // -----------custom variables----------
       const [allRequest , setAllRequest]=useState([])
+
+      // ---------create frend ---------------
+      const HeldelFriend=(FriendData)=>{
+        set(push(ref(db,'AllFriends/')), {
+          CurrentUserID:currentUser.uid,
+          CurrentUserName:currentUser.displayName,
+          CurrentUserPhoto:currentUser.photoURL,
+          FriendID: FriendData.SenderID,
+          FriendName: FriendData.SenderName,
+          FriendPhoto: FriendData. SenderPhoto
+        });
+        remove(ref(db , 'Allrequest/' + FriendData.key))
+      }
 
       // -----------realtime database----------
       useEffect(()=>{
@@ -45,7 +58,7 @@ const FrndRequest = () => {
                     <div key={i} className="flex items-center justify-between">
                           <CommonUser CommonUserName={item.SenderName} CommonUserPicture={item.SenderPhoto}/>
                           <div>
-                              <ButtonV1 ButonV1Text={'Confirm'} ButonV1bg={'bg-red-500 hover:bg-red-700 duration-500'}/>
+                              <ButtonV1 ButtonV1Clock={()=>HeldelFriend(item)} ButonV1Text={'Confirm'} ButonV1bg={'bg-red-500 hover:bg-red-700 duration-500'}/>
                               <ButtonV1 ButtonV1Clock={()=>hendelRemove(item)} ButonV1Text={'Remove'} ButonV1bg={'bg-red-500 ml-3 hover:bg-red-700 duration-500'} />
                           </div>
                     </div>

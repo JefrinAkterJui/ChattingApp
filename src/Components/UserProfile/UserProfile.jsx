@@ -14,7 +14,7 @@ const UserProfile = () => {
                 <h3>{currentUser?.displayName}</h3>
                 <div className="profile">
                     <div className="profilephoto overflow-hidden">
-                        <img src={currentUser?.photoURL} alt="" />
+                        <img src={currentUser?.photoURL} alt="profile" />
                     </div>
                     <div className="profileName">{currentUser?.displayName}</div>
                 </div>
