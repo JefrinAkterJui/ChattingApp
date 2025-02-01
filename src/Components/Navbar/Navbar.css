@@ -5,7 +5,7 @@
     @apply text-[#5c5b5b] cursor-pointer
 }
 .showMnue{
-    @apply w-[400px] rounded-[7px] 
+    @apply w-[485px] rounded-[7px] 
 }
 
 /* .icons{
@@ -15,6 +15,9 @@
     @apply right-[70px]
 } */
 .icons ul{
+    @apply flex gap-[25px] text-[20px] text-[#5c5b5b]
+}
+.icons ul li{
     @apply flex gap-[25px] text-[20px] text-[#5c5b5b]
 }
 .closeIcons{
@@ -27,7 +30,7 @@
     @apply relative
 }
 .icons ul li p{
-    @apply absolute top-[-20px] shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] bg-[#fff] py-[2px] px-[4px] rounded-[5px] font-poppins font-normal text-[18px] left-[50%] translate-x-[-50%] text-[#5c5b5b] scale-0 duration-300 
+    @apply absolute top-[-20px] shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] bg-[#fff] py-2 px-4 rounded-[5px] font-poppins font-normal text-[16px] left-[50%] translate-x-[-50%] text-[#5c5b5b] scale-0 duration-300 
 }
 .icons ul li:hover p{
     @apply top-[-50px] scale-[1] 

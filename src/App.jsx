@@ -11,6 +11,7 @@ import ForgotPass from './Components/ForgotPass/ForgotPass'
 import Alluser from './Components/Pages/Alluser'
 import FrndRequest from './Components/Pages/FrndRequest'
 import Friends from './Components/Pages/Friends'
+import Blocklist from './Components/Pages/Blocklist'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/Alluser' element={<Alluser/>}/>
           <Route path='/FrndRequest' element={<FrndRequest/>}/>
           <Route path='/Friends' element={<Friends/>}/>
+          <Route path='/BlockFrnd' element={<Blocklist/>}/>
         </Route>
       </Route>
     )

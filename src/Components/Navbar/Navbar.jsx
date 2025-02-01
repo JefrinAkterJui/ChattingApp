@@ -11,6 +11,8 @@ import { LuUserMinus } from 'react-icons/lu'
 import { SlLogout } from 'react-icons/sl'
 import { useDispatch } from 'react-redux'
 import { UserData } from '../../Slice/userSlice'
+import { IoIosNotificationsOutline, IoMdNotificationsOutline } from 'react-icons/io'
+import { MdOutlineAddReaction } from 'react-icons/md'
 
 const Navbar = () => {
     const [showIcon , setShowIcon] =useState(false)
@@ -31,6 +33,7 @@ const Navbar = () => {
                     <li><Link><CgProfile /></Link> <p>Profile</p> </li>
                     <li><Link to={'/Alluser'}><BsPeople /></Link> <p>Users</p> </li>
                     <li><Link><BiMessageSquareDots /></Link> <p>Messege</p> </li>
+                    <li><Link><IoMdNotificationsOutline className='text-[22px]'/></Link> <p>Notification</p> </li>
                 </ul>
             </div>
             <div onClick={()=>setShowIcon(!showIcon)} className="nav_icon">
@@ -40,7 +43,8 @@ const Navbar = () => {
                 <ul>
                     <li><Link to={'/FrndRequest'}><FiUserPlus /></Link><p>Request</p></li>
                     <li><Link to={'/Friends'}><TbUserCheck /></Link><p>Friends</p></li>
-                    <li><Link><LuUserMinus /></Link><p>Block</p></li>
+                    <li><Link to={'/BlockFrnd'}><LuUserMinus /></Link><p>Block</p></li>
+                    <li><Link><MdOutlineAddReaction /></Link> <p>MyReq...</p> </li>
                 </ul>
             </div>
         </div>
