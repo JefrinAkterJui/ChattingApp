@@ -32,7 +32,7 @@ const Navbar = () => {
                 <ul>
                     <li><Link><CgProfile /></Link> <p>Profile</p> </li>
                     <li><Link to={'/Alluser'}><BsPeople /></Link> <p>Users</p> </li>
-                    <li><Link><BiMessageSquareDots /></Link> <p>Messege</p> </li>
+                    <li><Link to={'/Messege'} ><BiMessageSquareDots /></Link> <p>Messege</p> </li>
                     <li><Link><IoMdNotificationsOutline className='text-[22px]'/></Link> <p>Notification</p> </li>
                 </ul>
             </div>

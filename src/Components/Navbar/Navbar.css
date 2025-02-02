@@ -1,5 +1,5 @@
 .main_navbar{
-    @apply w-[40px] h-[40px] bg-[#fff] absolute top-[60px] right-[36px] rounded-full text-center flex justify-center items-center shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] duration-300 gap-[55px] 
+    @apply w-[40px] h-[40px] bg-[#fff] absolute top-[60px] right-[36px] rounded-full text-center flex justify-center items-center duration-300 gap-[55px] shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] 
 }
 .nav_icon{
     @apply text-[#5c5b5b] cursor-pointer

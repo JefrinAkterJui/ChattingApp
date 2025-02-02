@@ -12,6 +12,7 @@ import Alluser from './Components/Pages/Alluser'
 import FrndRequest from './Components/Pages/FrndRequest'
 import Friends from './Components/Pages/Friends'
 import Blocklist from './Components/Pages/Blocklist'
+import Messege from './Components/Pages/Messege'
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path='/FrndRequest' element={<FrndRequest/>}/>
           <Route path='/Friends' element={<Friends/>}/>
           <Route path='/BlockFrnd' element={<Blocklist/>}/>
+          <Route path='/Messege' element={<Messege/>}/>
         </Route>
       </Route>
     )
